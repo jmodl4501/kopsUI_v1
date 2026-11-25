@@ -1,0 +1,236 @@
+"""
+마이페이지 > 회원정보관리 > 회원탈퇴  —  메뉴 기준 Playwright **sync** 테스트케이스
+
+수정은 이 파일의 `SAMPLE` / `STEPS` 만 고치면 됩니다.
+컴포넌트 ID, `clx.js`, 제출 객체를 직접 다룰 필요가 없습니다.
+라벨("제출연도", "조회", "상세")만 쓰고, 값은 `@sample.키` 로 참조합니다.
+
+실행
+    /opt/hira-pwenv/bin/python -m pytest menu_tests/test_OPAF033000.py -q
+    HIRA_MENU_LIVE=1 HIRA_MENU_IDS=OPAF033000 \
+        /opt/hira-pwenv/bin/python menu_tests/run_all_menu_tests.py --live
+"""
+from __future__ import annotations
+
+import json
+from menu_case_runner import run_case
+
+# ① 검색·입력에 쓸 샘플 데이터 — 자유롭게 수정
+SAMPLE = {   '제출연도': '2025',
+    '영업구분': 'S',
+    '서식구분': 'S10',
+    '페이지': '1',
+    '페이지행수': '10',
+    '업체명': '',
+    '검색어': '',
+    '요양기관명': '',
+    '품목명': '',
+    '모드': 'LIST'}
+
+# ② 소스에서 읽은 이벤트·핸들러·endpoint (참고용, 수정 불필요)
+EVENTS = [   {   'kind': '이벤트바인딩',
+        'label': 'inputBox_1',
+        'event': 'click',
+        'handler': 'onKeyDown_enter',
+        'component': 'inputBox_1',
+        'line': 377,
+        'submit_send': False,
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []},
+    {   'kind': '이벤트바인딩',
+        'label': 'button_1',
+        'event': 'click',
+        'handler': 'onBtnClick',
+        'component': 'button_1',
+        'line': 420,
+        'submit_send': True,
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []},
+    {   'kind': '이벤트바인딩',
+        'label': 'app',
+        'event': 'load',
+        'handler': 'onBodyLoad',
+        'component': 'app',
+        'line': 440,
+        'submit_send': False,
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []},
+    {   'kind': '화면전환',
+        'method': 'openPageId',
+        'line': 125,
+        'trigger_btn': None,
+        'targets': [],
+        'raw': 'OPAF034000 {}'},
+    {'kind': 'Submission', 'id': 'subSearch', 'line': 190, 'sent_at_lines': [42, 137]},
+    {'kind': 'Submission', 'id': 'subSave', 'line': 198, 'sent_at_lines': [118]}]
+HANDLERS = [   {   'handler': 'onBtnClick',
+        'line': 26,
+        'params': 'e',
+        'body_chars': 1486,
+        'submit_send': ['subSearch'],
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []},
+    {   'handler': 'onBodyLoad',
+        'line': 75,
+        'params': 'e',
+        'body_chars': 1066,
+        'submit_send': [],
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []},
+    {   'handler': 'onKeyDown_enter',
+        'line': 107,
+        'params': 'e',
+        'body_chars': 60,
+        'submit_send': [],
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []},
+    {   'handler': 'doOut',
+        'line': 117,
+        'params': '',
+        'body_chars': 631,
+        'submit_send': ['subSave'],
+        'open_page': [],
+        'menu_ids': ['OPAF034000'],
+        'ndo_literals': []},
+    {   'handler': 'doSearch',
+        'line': 136,
+        'params': '',
+        'body_chars': 148,
+        'submit_send': ['subSearch'],
+        'open_page': [],
+        'menu_ids': [],
+        'ndo_literals': []}]
+SOURCE_ENDPOINTS = [   {   'source_path': 'op/opf/selectMbInfmPwd.do',
+        'uri': '/kops/main/op/opf/selectMbInfmPwd.do',
+        'slug': 'selectMbInfmPwd.do',
+        'observed': True,
+        'destructive': False},
+    {   'source_path': 'op/opf/updateUsrOut.do',
+        'uri': '/kops/main/op/opf/updateUsrOut.do',
+        'slug': 'updateUsrOut.do',
+        'observed': False,
+        'destructive': True}]
+
+# ③ 기대 URI / 데이터셋 / 상세화면 / 팝업 (참고용)
+EXPECTED_URIS = [   {   'uri': '/kops/main/op/opf/selectMbInfmPwd.do',
+        'slug': 'selectMbInfmPwd.do',
+        'status': 410,
+        'accept': [200, 410],
+        'observed': True,
+        'required': False,
+        'calls': 2,
+        'phases': ['screen'],
+        'steps': ['openPageId'],
+        'via': ['본문'],
+        'dataset': 'testcases/dataset/selectMbInfmPwd.do.json',
+        'request_csv': 'out/cases/req_selectMbInfmPwd.do.csv',
+        'response_csv': 'out/cases/res_selectMbInfmPwd.do.csv',
+        'src_json': 'out/cases/src_selectMbInfmPwd.do.json',
+        'static_callers': []},
+    {   'uri': '/kops/main/op/opf/updateUsrOut.do',
+        'source_path': 'op/opf/updateUsrOut.do',
+        'slug': 'updateUsrOut.do',
+        'status': None,
+        'accept': [200, 410],
+        'observed': False,
+        'required': False,
+        'calls': 0,
+        'phases': [],
+        'steps': [],
+        'via': ['소스참조'],
+        'dataset': None,
+        'destructive': True,
+        'request_csv': None,
+        'response_csv': None,
+        'src_json': None,
+        'static_callers': []}]
+DATASETS = [   {   'slug': 'selectMbInfmPwd.do',
+        'uri': '/kops/main/op/opf/selectMbInfmPwd.do',
+        'statuses': {'410': 3},
+        'calls': 3,
+        'request_keys': ['dmParam'],
+        'response_keys': [],
+        'baseline_sample': [],
+        'boundary_count': 2,
+        'injection_count': 6,
+        'masked_fields': [],
+        'source_files': [],
+        'source_handlers': [],
+        'csv': {   'request': 'cases/req_selectMbInfmPwd.do.csv',
+                   'response': 'cases/res_selectMbInfmPwd.do.csv',
+                   'stack': 'cases/src_selectMbInfmPwd.do.json'},
+        'path': 'testcases/dataset/selectMbInfmPwd.do.json'}]
+DETAIL_SCREENS = []
+POPUPS = []
+
+# ④ 실제 테스트 순서 — 여기만 직관적으로 편집하면 됩니다
+STEPS = [   {'do': 'note', 'text': '마이페이지 > 회원정보관리 > 회원탈퇴 화면 진입 / 소스 이벤트 기반'},
+    {   'do': 'expect_screen',
+        'app_uri': 'app/op/opf/MbInfmOt',
+        'source': 'app_op_opf_MbInfmOt.clx.js',
+        'required': False},
+    {'do': 'click', 'label': '조회', 'settle': 1500, 'required': False},
+    {   'do': 'expect_any',
+        'uris': ['selectMbInfmPwd.do'],
+        'accept': [200, 410],
+        'required': False,
+        'note': '조회/화면로드 후 메뉴 전용 URI'}]
+
+CASE = {
+   'menu_id': 'OPAF033000',
+    'path': '마이페이지 > 회원정보관리 > 회원탈퇴',
+    'level': '3',
+    'login_required': True,
+    'screen': {   'app_uri': 'app/op/opf/MbInfmOt',
+                  'source': 'app_op_opf_MbInfmOt.clx.js',
+                  'title': '회원탈퇴',
+                  'menu_url_addr': 'app/op/opf/MbInfmOt.clx',
+                  'bytes': 15200,
+                  'components': 12,
+                  'event_bindings_count': 3,
+                  'handlers_count': 5},
+    'open': {'via': 'direct_ui', 'init': {}, 'init_keys_for_detail': []},
+    'runtime': {   'status': 'ok_direct',
+                   'navigation_via': 'util.EmbApp.load (direct UI load)',
+                   'access_control': 'hmrLoginTpCd=1 (client check bypassed for UI; server session '
+                                     'still required',
+                   'app_instance': 1,
+                   'body_len': 820,
+                   'clx_hit': True,
+                   'screen_wait_ok': True,
+                   'needs_login': True,
+                   'loaded_clx': ['MbInfmUpd.clx.js', 'MbInfmUpdInfmCfr.clx.js', 'MbInfmOt.clx.js'],
+                   'dialogs': [],
+                   'popup_visits': 0,
+                   'popup_buttons_tried': 0,
+                   'source_popup_refs': [],
+                   'logged_in': False},
+    'strict': False,
+    'test_file': 'menu_tests/test_OPAF033000.py',
+    'master_md': 'out/MENU_MASTER.md',
+    'dataset_file': 'menu_tests/sample_dataset.json',
+    "sample": SAMPLE,
+    "events": EVENTS,
+    "handlers": HANDLERS,
+    "source_endpoints": SOURCE_ENDPOINTS,
+    "expected_uris": EXPECTED_URIS,
+    "datasets": DATASETS,
+    "detail_screens": DETAIL_SCREENS,
+    "popups": POPUPS,
+    "steps": STEPS,
+}
+
+
+def test_OPAF033000():
+    report = run_case(CASE)          # 기본 plan 모드, live 는 옵트인
+    assert report["ok"], report
+
+
+if __name__ == "__main__":
+    print(json.dumps(run_case(CASE), ensure_ascii=False, indent=2))
