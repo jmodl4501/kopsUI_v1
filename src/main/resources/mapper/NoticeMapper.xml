@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.go.egovportal.notice.NoticeMapper">
+    <resultMap id="noticeMap" type="kr.go.egovportal.notice.Notice">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="writer" column="writer"/>
+        <result property="viewCount" column="view_count"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <sql id="keywordCondition">
+        <where>
+            <if test="keyword != null and keyword != ''">
+                (title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectNotices" resultMap="noticeMap">
+        SELECT id, title, content, writer, view_count, created_at, updated_at
+        FROM notice
+        <include refid="keywordCondition"/>
+        ORDER BY id DESC
+        LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <select id="selectNoticeCount" resultType="int">
+        SELECT COUNT(*)
+        FROM notice
+        <include refid="keywordCondition"/>
+    </select>
+
+    <select id="selectNotice" resultMap="noticeMap">
+        SELECT id, title, content, writer, view_count, created_at, updated_at
+        FROM notice
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insertNotice" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO notice (title, content, writer)
+        VALUES (#{title}, #{content}, #{writer})
+    </insert>
+
+    <update id="updateNotice">
+        UPDATE notice
+        SET title = #{title},
+            content = #{content},
+            writer = #{writer}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteNotice">
+        DELETE FROM notice
+        WHERE id = #{id}
+    </delete>
+</mapper>
