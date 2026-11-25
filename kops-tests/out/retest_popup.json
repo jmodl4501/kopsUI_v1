@@ -1,0 +1,343 @@
+{
+  "base_url": "http://127.0.0.1:3000",
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "results": [
+    {
+      "menu_id": "OPAA020200",
+      "path": "지출보고서 정보공개 > 지출보고서 공개자료조회 > 지출보고서 서식별 공개(견본품 제공)",
+      "ok": true,
+      "steps": 11,
+      "pass": 10,
+      "warn": 0,
+      "fail": 0,
+      "errors": [],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "지출보고서 정보공개 > 지출보고서 공개자료조회 > 지출보고서 서식별 공개(견본품 제공) 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl1 actual=app/op/opa/OggBriefPubDataSrchDtl1"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPub1List.ndo,selectOggBriefPubAllCnt.ndo (2 종류) hits=2 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020000",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020000 -> app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrch actual=app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectComCodeList.ndo,selectOggBriefPubDataSrchList.ndo,selectOggBriefPubAllCnt.ndo (3 종류) hits=3 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020100 -> app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/EntpOggBriefPubInfoList actual=app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPubAllCnt.ndo (1 종류) hits=1 status=[200]"
+        },
+        {
+          "do": "popup",
+          "label": "지출보고서 공개 현황",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 지출보고서 공개 현황"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPub1List.ndo,selectOggBriefPubAllCnt.ndo,selectBizInfoSubTitle.ndo (3 종류) hits=1 status=[200]"
+        }
+      ],
+      "elapsed_sec": 4.01
+    },
+    {
+      "menu_id": "OPAA020800",
+      "path": "지출보고서 정보공개 > 지출보고서 공개자료조회 > 지출보고서 서식별 공개(구매 전 의료기기의 성능 확인을 위한 사용)",
+      "ok": true,
+      "steps": 11,
+      "pass": 9,
+      "warn": 1,
+      "fail": 0,
+      "errors": [],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "지출보고서 정보공개 > 지출보고서 공개자료조회 > 지출보고서 서식별 공개(구매 전 의료기기의 성능 확인을 위한 사용) 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl7 actual=app/op/opa/OggBriefPubDataSrchDtl7"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPub5List.ndo,selectOggBriefPub6List.ndo,selectOggBriefPub7List.ndo (3 종류) hits=3 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020000",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020000 -> app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrch actual=app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectComCodeList.ndo,selectOggBriefPubDataSrchList.ndo,selectOggBriefPubAllCnt.ndo (3 종류) hits=3 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020100 -> app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/EntpOggBriefPubInfoList actual=app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPubAllCnt.ndo (1 종류) hits=1 status=[200]"
+        },
+        {
+          "do": "popup",
+          "label": "지출보고서 공개 현황",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 지출보고서 공개 현황"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "WARN",
+          "detail": "selectOggBriefPub7List.ndo (1 종류) hits=0 status=[]"
+        }
+      ],
+      "elapsed_sec": 3.92
+    },
+    {
+      "menu_id": "OPAA030000",
+      "path": "지출보고서 정보공개 > 한눈에 보는 지출보고서 통계",
+      "ok": true,
+      "steps": 15,
+      "pass": 10,
+      "warn": 4,
+      "fail": 0,
+      "errors": [],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "지출보고서 정보공개 > 한눈에 보는 지출보고서 통계 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/AllSeeOggWrptStc actual=app/op/opa/AllSeeOggWrptStc"
+        },
+        {
+          "do": "click",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectAcpDescPrdAstc1Gsum.ndo,selectAllSeeStcInfoRcmd.ndo,selectAllSeeStcListGSum.ndo (9 종류) hits=8 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA030100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA030100 -> app/op/opa/LawEcnmyPftOffrrList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/LawEcnmyPftOffrrList actual=app/op/opa/LawEcnmyPftOffrrList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "WARN",
+          "detail": "selectAllSeeStcList.ndo,selectExttOnoList.ndo,selectOggBriefSmitYrList.ndo (3 종류) hits=0 status=[]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA030200",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA030200 -> app/op/opa/LawEcnmyPftOffrrDtlList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/LawEcnmyPftOffrrDtlList actual=app/op/opa/LawEcnmyPftOffrrDtlList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "WARN",
+          "detail": "selectExttOnoList.ndo,selectOffrDescPecnyAstc1.ndo,selectOggBriefSmitYrList.ndo (3 종류) hits=0 status=[]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA030300",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA030300 -> app/op/opa/LawEcnmyPftAcpDtlList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/LawEcnmyPftAcpDtlList actual=app/op/opa/LawEcnmyPftAcpDtlList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "WARN",
+          "detail": "selectAcpDescPecnyAstc1.ndo,selectExttOnoList.ndo,selectOffrDescPecnyAstc1.ndo (4 종류) hits=0 status=[]"
+        },
+        {
+          "do": "popup",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "WARN",
+          "detail": "selectAcpDescPrdAstc1Gsum.ndo,selectAllSeeStcListGSum.ndo,selectOffrDescPecnyAstc1Gsum.ndo (8 종류) hits=0 status=[]"
+        }
+      ],
+      "elapsed_sec": 6.42
+    }
+  ]
+}

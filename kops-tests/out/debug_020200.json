@@ -1,0 +1,111 @@
+{
+  "base_url": "http://127.0.0.1:3000",
+  "total": 1,
+  "passed": 0,
+  "failed": 1,
+  "results": [
+    {
+      "menu_id": "OPAA020200",
+      "path": "지출보고서 정보공개 > 지출보고서 공개자료조회 > 지출보고서 서식별 공개(견본품 제공)",
+      "ok": false,
+      "steps": 11,
+      "pass": 8,
+      "warn": 1,
+      "fail": 1,
+      "errors": [
+        "popup 지출보고서 공개 현황: TimeoutError: Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=re.compile(r"
+      ],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "지출보고서 정보공개 > 지출보고서 공개자료조회 > 지출보고서 서식별 공개(견본품 제공) 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl1 actual=app/op/opa/OggBriefPubDataSrchDtl1"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPub1List.ndo,selectOggBriefPubAllCnt.ndo (2 종류) hits=2 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020000",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020000 -> app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrch actual=app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectComCodeList.ndo,selectOggBriefPubDataSrchList.ndo,selectOggBriefPubAllCnt.ndo (3 종류) hits=3 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020100 -> app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/EntpOggBriefPubInfoList actual=app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPubAllCnt.ndo (1 종류) hits=1 status=[200]"
+        },
+        {
+          "do": "popup",
+          "label": "지출보고서 공개 현황",
+          "menu_id": null,
+          "uri": null,
+          "status": "FAIL",
+          "detail": "TimeoutError: Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=re.compile(r\"^지출보고서\\ 공개\\ 현황$\")).first\n"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "WARN",
+          "detail": "selectOggBriefPub1List.ndo,selectOggBriefPubAllCnt.ndo,selectBizInfoSubTitle.ndo (3 종류) hits=0 status=[]"
+        }
+      ],
+      "elapsed_sec": 32.94
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "base_url": "http://127.0.0.1:3000",
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "results": [
+    {
+      "menu_id": "OPAA020000",
+      "path": "지출보고서 정보공개 > 지출보고서 공개자료조회",
+      "ok": true,
+      "steps": 24,
+      "pass": 23,
+      "warn": 0,
+      "fail": 0,
+      "errors": [],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "지출보고서 정보공개 > 지출보고서 공개자료조회 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrch actual=app/op/opa/OggBriefPubDataSrch"
+        },
+        {
+          "do": "select",
+          "label": "제출연도",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "제출연도=2025"
+        },
+        {
+          "do": "fill",
+          "label": "업체명",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "업체명="
+        },
+        {
+          "do": "click",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectComCodeList.ndo,selectOggBriefPub1List.ndo,selectOggBriefPub2List.ndo (10 종류) hits=10 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020100 -> app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/EntpOggBriefPubInfoList actual=app/op/opa/EntpOggBriefPubInfoList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefPubAllCnt.ndo (1 종류) hits=1 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020200",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020200 -> app/op/opa/OggBriefPubDataSrchDtl1"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl1 actual=app/op/opa/OggBriefPubDataSrchDtl1"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020300",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020300 -> app/op/opa/OggBriefPubDataSrchDtl2"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl2 actual=app/op/opa/OggBriefPubDataSrchDtl2"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020400",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020400 -> app/op/opa/OggBriefPubDataSrchDtl3"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl3 actual=app/op/opa/OggBriefPubDataSrchDtl3"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020500",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020500 -> app/op/opa/OggBriefPubDataSrchDtl4"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl4 actual=app/op/opa/OggBriefPubDataSrchDtl4"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020600",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020600 -> app/op/opa/OggBriefPubDataSrchDtl5"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl5 actual=app/op/opa/OggBriefPubDataSrchDtl5"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020700",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020700 -> app/op/opa/OggBriefPubDataSrchDtl6"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl6 actual=app/op/opa/OggBriefPubDataSrchDtl6"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAA020800",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAA020800 -> app/op/opa/OggBriefPubDataSrchDtl7"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opa/OggBriefPubDataSrchDtl7 actual=app/op/opa/OggBriefPubDataSrchDtl7"
+        },
+        {
+          "do": "popup",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        }
+      ],
+      "elapsed_sec": 11.21
+    },
+    {
+      "menu_id": "OPAB050000",
+      "path": "지출보고서 작성ㆍ정정 > 지출보고서 정정",
+      "ok": true,
+      "steps": 29,
+      "pass": 28,
+      "warn": 0,
+      "fail": 0,
+      "errors": [],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "지출보고서 작성ㆍ정정 > 지출보고서 정정 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefWrtUpdList actual=app/op/opb/OggBriefWrtUpdList"
+        },
+        {
+          "do": "select",
+          "label": "제출연도",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "제출연도=2025"
+        },
+        {
+          "do": "select",
+          "label": "영업구분",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "영업구분=S"
+        },
+        {
+          "do": "click",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectBizWrtMbList.do,selectComCodeList.do,selectOggBriefForm1List.do (10 종류) hits=10 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050100 -> app/op/opb/EntpOggBriefFormUpdList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/EntpOggBriefFormUpdList actual=app/op/opb/EntpOggBriefFormUpdList"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectOggBriefFormAllCnt.do (1 종류) hits=1 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB031100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB031100 -> app/op/opb/EntpInfmWrt"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/EntpInfmWrt actual=app/op/opb/EntpInfmWrt"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectComCodeList.do,selectBizWrtTgtList.do (2 종류) hits=2 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050200",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050200 -> app/op/opb/OggBriefFormUpdList1"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList1 actual=app/op/opb/OggBriefFormUpdList1"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050300",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050300 -> app/op/opb/OggBriefFormUpdList2"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList2 actual=app/op/opb/OggBriefFormUpdList2"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050400",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050400 -> app/op/opb/OggBriefFormUpdList3"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList3 actual=app/op/opb/OggBriefFormUpdList3"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050500",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050500 -> app/op/opb/OggBriefFormUpdList4"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList4 actual=app/op/opb/OggBriefFormUpdList4"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050600",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050600 -> app/op/opb/OggBriefFormUpdList5"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList5 actual=app/op/opb/OggBriefFormUpdList5"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050700",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050700 -> app/op/opb/OggBriefFormUpdList6"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList6 actual=app/op/opb/OggBriefFormUpdList6"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050800",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050800 -> app/op/opb/OggBriefFormUpdList7"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/OggBriefFormUpdList7 actual=app/op/opb/OggBriefFormUpdList7"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAB050900",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAB050900 -> app/op/opb/LastFdecList"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opb/LastFdecList actual=app/op/opb/LastFdecList"
+        },
+        {
+          "do": "popup",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        }
+      ],
+      "elapsed_sec": 13.02
+    },
+    {
+      "menu_id": "OPAD010000",
+      "path": "고객지원 > 공지사항",
+      "ok": true,
+      "steps": 8,
+      "pass": 7,
+      "warn": 0,
+      "fail": 0,
+      "errors": [],
+      "detail": [
+        {
+          "do": "note",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "INFO",
+          "detail": "고객지원 > 공지사항 화면 진입 / 소스 이벤트 기반"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opd/Ntfclte actual=app/op/opd/Ntfclte"
+        },
+        {
+          "do": "click",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectAcpDescPecnyAstc1.ndo,selectAllSeeStcList.ndo,selectExttOnoList.ndo (7 종류) hits=7 status=[200]"
+        },
+        {
+          "do": "detail",
+          "label": null,
+          "menu_id": "OPAD010100",
+          "uri": null,
+          "status": "PASS",
+          "detail": "open OPAD010100 -> app/op/opd/NtfclteDtl"
+        },
+        {
+          "do": "expect_screen",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "expect=app/op/opd/NtfclteDtl actual=app/op/opd/NtfclteDtl"
+        },
+        {
+          "do": "expect_any",
+          "label": null,
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "selectNtfclteDtl.ndo (1 종류) hits=1 status=[200]"
+        },
+        {
+          "do": "popup",
+          "label": "조회",
+          "menu_id": null,
+          "uri": null,
+          "status": "PASS",
+          "detail": "click 조회"
+        }
+      ],
+      "elapsed_sec": 4.49
+    }
+  ]
+}

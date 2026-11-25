@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.go.kops.db.ReportMapper">
+
+  <!-- Joins dmParam(common) with the matching snake_case 서식정보 table. -->
+  <select id="selectForms" resultType="map">
+    SELECT r.smit_year, r.smit_no, r.biz_tp_cd, r.biz_frm_cd, r.form_ty_cd, f.*
+    FROM report_submission r
+    <choose>
+      <when test="formTyCd == 'S10' or formTyCd == 'E10'">
+        JOIN form_sample_offr f ON f.submission_id = r.id
+      </when>
+      <when test="formTyCd == 'S20' or formTyCd == 'E20'">
+        JOIN form_symposium_offr f ON f.submission_id = r.id
+      </when>
+      <when test="formTyCd == 'S31' or formTyCd == 'E31'">
+        JOIN form_clinical_trial f ON f.submission_id = r.id
+      </when>
+      <when test="formTyCd == 'S41' or formTyCd == 'E41'">
+        JOIN form_product_pst f ON f.submission_id = r.id
+      </when>
+      <when test="formTyCd == 'E44'">
+        JOIN form_post_market_invt f ON f.submission_id = r.id
+      </when>
+      <when test="formTyCd == 'E50'">
+        JOIN form_expense_dc f ON f.submission_id = r.id
+      </when>
+      <when test="formTyCd == 'E70' or formTyCd == 'E60'">
+        JOIN form_performance_cfr f ON f.submission_id = r.id
+      </when>
+      <otherwise>
+        JOIN form_sample_offr f ON f.submission_id = r.id
+      </otherwise>
+    </choose>
+    WHERE r.form_ty_cd = #{formTyCd}
+    ORDER BY f.id DESC
+    LIMIT 100
+  </select>
+
+  <select id="selectMenus" resultType="map">
+    SELECT menu_id, menu_path, menu_title, menu_group, menu_section, depth,
+           app_uri, login_required
+    FROM menu ORDER BY menu_id
+  </select>
+
+  <select id="selectUriBaselines" resultType="map">
+    SELECT slug, uri, menu_id, expected_status FROM uri_baseline
+    ORDER BY menu_id, slug
+  </select>
+
+  <select id="selectCommonCodes" resultType="map">
+    SELECT code_group, code, code_name, sort_order FROM common_code
+    WHERE code_group = #{codeGroup} ORDER BY sort_order
+  </select>
+</mapper>
